@@ -9,6 +9,39 @@
   </head>
 
   <body>
+
+    <nav class="navbar navbar-inverse">
+     <div class="container">
+       <div class="navbar-header">
+         <%= link_to 'Portfolio', root_path, class: 'navbar-brand' %>
+       </div>
+       <div id="navbar">
+         <% if current_user %>
+           <ul class="nav navbar-nav pull-right">
+
+             <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
+           </ul>
+         <% else %>
+           <ul class="nav navbar-nav pull-right">
+             <li><%# link_to 'Projects', projects_path %></li>
+             <li><%= link_to "Log-in", new_user_session_path %></a></li>
+             <li><%# link_to "Signup", new_user_registration_path %></a></li>
+           </ul>
+         <% end %>
+       </div>
+     </div>
+   </nav>
+
+    <div class="container">
+    <div class="pull-right">
+      <% if current_user %>
+         Logged in as: <%= current_user.email %>
+         <% end %>
+    </div>
+    <%= notice %>
+    <%= alert %>
     <%= yield %>
+
+    </div>
   </body>
 </html>
