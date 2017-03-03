@@ -4,6 +4,13 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     repos = Github.new
     @repo_list = repos.get_projects()
+    @complete_list = false
+    if params[:complete_list]
+      @complete_list = true
+    end
+    if params[:starred_list]
+      @complete_list = false
+    end
   end
 
   def show

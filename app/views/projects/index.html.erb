@@ -21,32 +21,40 @@
       <% else %>
         <p>There are no projects</p>
     <% end %>
-
     <hr>
   </div>
 </div>
 
 <div class="col-md-6">
-    <h3>Starred Github Projects</h3>
-
-    <% @repo_list.each do |repo| %>
-      <li>
-        <% if repo['stargazers_count'] > 0 %>
-          <%= link_to repo['name'], repo['html_url'] %>
-        | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <%= repo['stargazers_count'] %>
+  <%= link_to "View Complete", :class => "btn btn-primary", :complete_list => "complete_list"%> |
+  <%= link_to "View Starred", :class => "btn btn-primary", :starred_list => "starred_list"%>
+<div class="well">
+  <!-- VIEW COMPLETE LIST -->
+    <% if @complete_list === true %>
+    <h3>All My Github Projects</h3>
+        <% @repo_list.each do |repo| %>
+          <li>
+            <% if repo['name'] != "Guides" %> <!-- hiding guides repo -->
+                <%= link_to repo['name'], repo['html_url'] %>
+            <% end %>
+          </li>
         <% end %>
-      </li>
+            Only 100 are shown at this time - <a href="https://github.com/jrinard?tab=repositories">Here</a> to view more
     <% end %>
-
-
-
-<%# @repo_list.each do |repo| %>
-  <li>
-    <%# link_to repo['name'], 'https://github.com/jrinard/' + repo['name'] %>
-  </li>
-<%# end %>
-
-
-
-  </div>
+<!-- VIEW STARRED LIST -->
+    <% if @complete_list === false %>
+        <h3>Starred Github Projects</h3>
+          <% @repo_list.each do |repo| %>
+            <li>
+              <% if repo['name'] != "Guides" %> <!-- hiding guides repo -->
+                <% if repo['stargazers_count'] > 0 %>
+                  <%= link_to repo['name'], repo['html_url'] %>
+                | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <%= repo['stargazers_count'] %>
+                <% end %>
+              <% end %>
+            </li>
+          <% end %>
+    <% end %>
+    </div>
+  </div> <!-- col -->
 </div>
