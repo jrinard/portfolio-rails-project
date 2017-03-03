@@ -2,6 +2,9 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+
+    repos = Github.new
+    @github = repos.get_projects()
   end
 
   def show
