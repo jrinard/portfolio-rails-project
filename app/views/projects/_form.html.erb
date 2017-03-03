@@ -1,0 +1,10 @@
+
+<%= form_for @project do |f| %>
+  <%= f.label :title,'Title' %>
+  <%= f.text_field :title, :class => 'form-control', :placeholder => "Title"  %><br>
+  <%= f.label :description,'Description' %>
+  <%= f.text_field :description, :class => 'form-control', :placeholder => "Description"  %><br>
+  <%= f.label :link,'Link' %>
+  <%= f.text_field :link, :class => 'form-control', :placeholder => "Link"  %><br>
+  <%= f.submit %>
+<% end %>

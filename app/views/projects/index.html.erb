@@ -1,0 +1,22 @@
+<h1>Projects</h1>
+
+<h4>Here are some of my recent projects.</h4>
+
+
+<div class="well">
+  <%# if current_user %>
+  <div class="pull-right"><%= link_to "New Project", new_project_path %></div>
+  <%# end %>
+
+  <% if @projects.any? %>
+    <% @projects.each  do |project| %>
+    <li>
+      <span class="project-text"> <%= project.title %></span>
+      <span class="project-text"> <%= project.description %></span>
+      <a href="#"><%= project.link %></a>
+    </li>
+    <% end %>
+    <% else %>
+      <p>There are no projects</p>
+  <% end %>
+</div>
