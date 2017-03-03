@@ -4,9 +4,9 @@
 
 
 <div class="well">
-  <%# if current_user %>
+  <% if current_user %>
   <div class="pull-right"><%= link_to "New Project", new_project_path, :class => "btn btn-primary" %></div>
-  <%# end %>
+  <% end %>
 
   <% if @projects.any? %>
     <% @projects.each  do |project| %>
@@ -14,7 +14,6 @@
     <li>Description: <span class="project-text"> <%= project.description %></span></li>
     <li><a href="#"><%= project.link %></a></li>
     <hr>
-
     <% end %>
     <% else %>
       <p>There are no projects</p>
