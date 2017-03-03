@@ -1,6 +1,6 @@
 <h1>Projects</h1>
 
-<h4>Here are some of my recent projects.</h4>
+<h4>Here are some of my favorite projects.</h4>
 
 <div class="col-md-6">
   <div class="well">
@@ -27,12 +27,26 @@
 </div>
 
 <div class="col-md-6">
-    <h3>Github Projects</h3>
-<% @github.each do |repo| %>
+    <h3>Starred Github Projects</h3>
+
+    <% @repo_list.each do |repo| %>
+      <li>
+        <% if repo['stargazers_count'] > 0 %>
+          <%= link_to repo['name'], repo['html_url'] %>
+        | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <%= repo['stargazers_count'] %>
+        <% end %>
+      </li>
+    <% end %>
+
+
+
+<%# @repo_list.each do |repo| %>
   <li>
-    <%= link_to repo['name'], 'https://github.com/jrinard' + repo['name'] %>
+    <%# link_to repo['name'], 'https://github.com/jrinard/' + repo['name'] %>
   </li>
-<% end %>
+<%# end %>
+
+
 
   </div>
 </div>
