@@ -31,6 +31,14 @@
         1,
         1,
         null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/JoshuaRinard/Desktop/portfolio/spec/rails_helper.rb": [
@@ -58,8 +66,8 @@
         null,
         null,
         1,
-        7,
-        7,
+        8,
+        8,
         null,
         null,
         null,
@@ -677,8 +685,40 @@
         1,
         1,
         null
+      ],
+      "/Users/JoshuaRinard/Desktop/portfolio/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/JoshuaRinard/Desktop/portfolio/app/controllers/about_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1488569312
+    "timestamp": 1488569656
   }
 }

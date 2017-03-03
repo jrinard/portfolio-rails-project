@@ -28,3 +28,11 @@ describe "Project Paths", type: :feature do
     expect(page).to_not have_content 'BIG'
   end
 end
+
+describe "basic pathing" do
+  it "about pathing" do
+    visit root_path
+    click_link "About"
+    expect(page).to have_content 'About'
+  end
+end
