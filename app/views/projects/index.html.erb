@@ -10,9 +10,12 @@
 
   <% if @projects.any? %>
     <% @projects.each  do |project| %>
-    <li>Title: <span class="project-text"> <%= project.title %></span></li>
+    <li><h4>Title: <span class="project-text"> <%= project.title %></span></h4></li>
     <li>Description: <span class="project-text"> <%= project.description %></span></li>
-    <li><a href="#"><%= project.link %></a></li>
+    <li><a href="#"><%= project.link %></a></li><br>
+    <% if current_user %>
+      <%= link_to "Delete Project",  project_path(project), :class => "btn btn-danger btn-sm",  :data => {:confirm => "Are you sure?",:method => "delete"} %>
+    <% end %>
     <hr>
     <% end %>
     <% else %>
