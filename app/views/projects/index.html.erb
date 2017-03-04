@@ -1,37 +1,33 @@
 <h1>Projects</h1>
-
 <h4>Here are some of my favorite projects.</h4>
-
-<div class="col-md-6">
-  <div class="well">
-    <% if current_user %>
-    <div class="pull-right"><%= link_to "New Project", new_project_path, :class => "btn btn-primary" %></div>
-    <% end %>
-
-    <% if @projects.any? %>
-      <% @projects.each  do |project| %>
-      <li><h4>Title: <span class="project-text"> <%= project.title %></span></h4></li>
-      <li>Description: <span class="project-text"> <%= project.description %></span></li>
-      <li><a href="#"><%= project.link %></a></li><br>
+  <div class="col-md-6">
+    <div class="well">
       <% if current_user %>
-        <%= link_to "Delete Project",  project_path(project), :class => "btn btn-danger btn-sm",  :data => {:confirm => "Are you sure?",:method => "delete"} %>
+      <div class="pull-right"><%= link_to "New Project", new_project_path, :class => "btn btn-primary" %></div>
+      <% end %>
+      <% if @projects.any? %>
+        <% @projects.each  do |project| %>
+        <li>Title: <span class="project-text"> <%= project.title %></span></li>
+        <li>Description: <span class="project-text"> <%= project.description %></span></li>
+        <li><%= project.link %></li><br>
+        <% if current_user %>
+          <%= link_to "Delete Project",  project_path(project), :class => "btn btn-danger btn-sm",  :data => {:confirm => "Are you sure?",:method => "delete"} %>
+        <% end %>
+        <hr>
+        <% end %>
+        <% else %>
+          <p>There are no projects</p>
       <% end %>
       <hr>
-      <% end %>
-      <% else %>
-        <p>There are no projects</p>
-    <% end %>
-    <hr>
+    </div>
   </div>
-</div>
-
-<div class="col-md-6">
-  <%= link_to "View Complete", :class => "btn btn-primary", :complete_list => "complete_list"%> |
-  <%= link_to "View Starred", :class => "btn btn-primary", :starred_list => "starred_list"%>
-<div class="well">
+  <div class="col-md-6">
+    <div class="well">
+      <%= link_to "View Complete", :class => "btn btn-primary", :complete_list => "complete_list"%> |
+      <%= link_to "View Starred", :class => "btn btn-primary", :starred_list => "starred_list"%>
   <!-- VIEW COMPLETE LIST -->
-    <% if @complete_list === true %>
-    <h3>All My Github Projects</h3>
+      <% if @complete_list === true %>
+        <h3>All My Github Projects</h3>
         <% @repo_list.each do |repo| %>
           <li>
             <% if repo['name'] != "Guides" %> <!-- hiding guides repo -->
@@ -39,22 +35,21 @@
             <% end %>
           </li>
         <% end %>
-            Only 100 are shown at this time - <a href="https://github.com/jrinard?tab=repositories">Here</a> to view more
-    <% end %>
-<!-- VIEW STARRED LIST -->
-    <% if @complete_list === false %>
+        Only 100 are shown at this time - <a href="https://github.com/jrinard?tab=repositories">Here</a> to view more
+      <% end %>
+  <!-- VIEW STARRED LIST -->
+      <% if @complete_list === false %>
         <h3>Starred Github Projects</h3>
-          <% @repo_list.each do |repo| %>
-            <li>
-              <% if repo['name'] != "Guides" %> <!-- hiding guides repo -->
-                <% if repo['stargazers_count'] > 0 %>
-                  <%= link_to repo['name'], repo['html_url'] %>
-                | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <%= repo['stargazers_count'] %>
+        <% @repo_list.each do |repo| %>
+          <li>
+            <% if repo['name'] != "Guides" %> <!-- hiding guides repo -->
+              <% if repo['stargazers_count'] > 0 %>
+                <%= link_to repo['name'], repo['html_url'] %>
+                  | <span class="glyphicon glyphicon-star" aria-hidden="true"></span> <%= repo['stargazers_count'] %>
                 <% end %>
               <% end %>
-            </li>
-          <% end %>
-    <% end %>
+            <% end %>
+          </li>
+      <% end %>
     </div>
   </div> <!-- col -->
-</div>
