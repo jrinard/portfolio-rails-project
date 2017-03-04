@@ -1,24 +1,35 @@
-# README
+### Portfolio App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app demonstrates using Github API for portfolio.
+Built with one user. Myself. Has the ability to add new projects and delete them
+Allows filtering of starred repositories and the complete list.
 
-Things you may want to cover:
+* Ruby version - 2.3.1
 
-* Ruby version
+### Database Setup
 
-* System dependencies
+ * `postgres` in Terminal
+ * `rails db:setup`
+ * `rails db:seed`
 
-* Configuration
+### Run Ap
+* `bundle install`
+* `rails s`
+* Visit localhost:3000 in browser
 
-* Database creation
+### Run Tests
 
-* Database initialization
+* `rspec` in terminal
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Support and Contact Details
 
-* Deployment instructions
+* Github for Joshua Rinard: https://github.com/jrinard
 
-* ...
+* Email: jrinard@hotmail.com
+
+### License
+
+MIT
+
+Copyright (c) 2017 Joshua Rinard
