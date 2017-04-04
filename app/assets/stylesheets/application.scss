@@ -6,51 +6,19 @@
   letter-spacing: 1px;
 }
 
-h1, h2, h4 {
-  color: #fff;
-}
-
-.white {
-  color: #fff;
-}
-
-li {
-  list-style-type: none;
-}
-
-ul {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-.well {
-  max-width: 400px;
-}
-body {
-  background: linear-gradient(to bottom, #0099cc, #313067);
-  min-height: 1000px;
-}
-
-
-
-
-
 ///////////////////// OVERALL
 html {
   height: 145%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    background: #70bg32;
-    background-repeat:no-repeat;
-    background: -webkit-linear-gradient( to bottom , #413f7a, #1680b1);
-    background: -moz-linear-gradient( to bottom , #413f7a, #1680b1);
-    background: -ms-linear-gradient( to bottom , #413f7a, #1680b1);
-    background: -o-linear-gradient( to bottom , #413f7a, #1680b1);
-    background: linear-gradient( to bottom , #413f7a, #1680b1);
+
+    // background-repeat:no-repeat;
+    // background: -webkit-linear-gradient( to bottom , #413f7a, #1680b1);
+    // background: -moz-linear-gradient( to bottom , #413f7a, #1680b1);
+    // background: -ms-linear-gradient( to bottom , #413f7a, #1680b1);
+    // background: -o-linear-gradient( to bottom , #413f7a, #1680b1);
+    // background: linear-gradient( to bottom , #413f7a, #1680b1);
 }
 * {
   font-family: 'Open Sans', sans-serif;
@@ -99,7 +67,8 @@ p {
 
 body {
   margin-right: -10px;
-  background: linear-gradient(to bottom, #413f7a , #1680b1);
+  background-color: #333;
+  // background: linear-gradient(to bottom, #413f7a , #1680b1);
   min-height: 100%;
   // background: url("/assets/bg.jpg") no-repeat center center fixed;
   // -webkit-background-size: cover;
@@ -215,6 +184,7 @@ body {
   padding: 0px 2px;
   -webkit-box-shadow: none !important;
    box-shadow: none  !important;
+   padding: 10px;
 }
 
 .btn2 {
