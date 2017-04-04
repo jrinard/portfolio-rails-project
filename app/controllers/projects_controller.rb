@@ -1,6 +1,12 @@
 class ProjectsController < ApplicationController
 
   def index
+    @user = current_user
+    @showlogin = false
+    if params[:logout]
+      @showlogin = true
+    end
+
     @projects = Project.all
     repos = Github.new
     @repo_list = repos.get_projects()

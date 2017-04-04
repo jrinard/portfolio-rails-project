@@ -8,38 +8,55 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <nav class="navbar navbar-inverse">
-     <div class="container">
-       <div class="navbar-header">
-         <%= link_to 'Portfolio', root_path, class: 'navbar-brand' %>
-       </div>
-       <div id="navbar">
-         <ul class="nav navbar-nav">
-            <li><%= link_to 'About', about_index_path %></li>
-            <li><%= link_to 'Projects', projects_path %></li>
-         </ul>
-         <% if current_user %>
-           <ul class="nav navbar-nav pull-right">
-             <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
-           </ul>
-         <% else %>
-           <ul class="nav navbar-nav pull-right">
-             <li><%= link_to "Log-in", new_user_session_path %></a></li>
-             <li><%# link_to "Signup", new_user_registration_path %></a></li>
-           </ul>
-         <% end %>
-       </div>
+    <div class="flex-container-big">
+      <div class="flex-block-big">
+        <div class="col-xs-12">
+          <div class="center">
+
+          <%= link_to image_tag("logo.png", :class => "logo"), root_path %>
+          <%= link_to 'About', about_index_path %> |
+          <%= link_to 'Projects', projects_path %>
+
+
+
+
+        </div>
      </div>
-   </nav>
-    <div class="container">
-    <div class="pull-right">
-      <% if current_user %>
-         Logged in as: <%= current_user.email %>
-         <% end %>
-    </div>
-    <%= notice %>
-    <%= alert %>
+   </div>
+</div>
+  <!-- LOGIN -->
+   <% if @showlogin === true %>
+   <div class="menu">
+     <% if current_user %>
+     <%= link_to "Logout", destroy_user_session_path, method: "delete" %> |
+     <%= link_to current_user.email, edit_user_registration_path %>
+     <% else %>
+     <%= link_to "Log-in", new_user_session_path %></a>
+     <%= link_to "Signup", new_user_registration_path %></a>
+     <% end %>
+   </div> <!-- login end -->
+   <% end %>
+
+   <div class="center-notice grey">
+       <%= flash[:notice] %>
+   </div>
+
     <%= yield %>
     </div>
+
+    <div class="footer">
+  <div class="notice"></div>
+    <% if current_user %>
+
+        <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
+
+    <% else %>
+
+        <li><%= link_to "Admin", new_user_session_path %></a></li>
+
+    <% end %>
+  </div><!-- control panel end -->
+
+
   </body>
 </html>
