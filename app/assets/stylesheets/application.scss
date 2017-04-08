@@ -30,7 +30,6 @@ li {
 }
 
 p {
-  text-align: center;
   color: #000;
 }
 
@@ -61,7 +60,7 @@ h4 {
 
 h5 {
   font-family: 'Open Sans', sans-serif;
-  color: #fff;
+  color: #999;
   text-align: center;
 }
 
@@ -76,6 +75,22 @@ h6 {
   letter-spacing: 2px;
   text-align: center;
 }
+
+.project-text {
+  color: #000;
+  font-size: 1.5em;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.project-subtext {
+  color: #000;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+
 
 
 
@@ -489,6 +504,7 @@ input[type="image"]
 
 .left {
   background-color: #333;
+  padding-bottom: 150px;
 }
 
 .right {
@@ -498,4 +514,25 @@ input[type="image"]
 
 .content {
   width: 90%;
+}
+
+.profile {
+  max-width: 600px;
+  padding: 40px 15px 15px 15px;
+}
+
+.panel-custom {
+  border: 1px solid #999;
+}
+
+.panel-heading {
+    background-color: #d2d2d2;
+}
+
+.panel-body {
+  margin-bottom: 10px;
+}
+
+.panel {
+
 }
