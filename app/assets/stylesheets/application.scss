@@ -1,18 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-* {
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: 1px;
-}
+// font-family: 'Passion One', cursive;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Bangers', cursive;
+// font-family: 'Open Sans', sans-serif;
 
-///////////////////// OVERALL
 html {
-  height: 145%;
+  height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-
     // background-repeat:no-repeat;
     // background: -webkit-linear-gradient( to bottom , #413f7a, #1680b1);
     // background: -moz-linear-gradient( to bottom , #413f7a, #1680b1);
@@ -20,6 +18,7 @@ html {
     // background: -o-linear-gradient( to bottom , #413f7a, #1680b1);
     // background: linear-gradient( to bottom , #413f7a, #1680b1);
 }
+
 * {
   font-family: 'Open Sans', sans-serif;
   padding: 0;
@@ -30,21 +29,55 @@ li {
   list-style-type: none;
 }
 
-h1, h2, h5 {
-  color: #fff;
-  text-align: center;
-}
-h4 {
-  color: #fff;
-  text-align: center;
-}
-h4 {
-  line-height: normal;
-}
-
 p {
   text-align: center;
+  color: #000;
 }
+
+h1 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: center;
+}
+
+h4 {
+  color: #fff;
+  text-align: center;
+}
+
+h5 {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+h6 {
+  color: #000;
+}
+
+.h2-black {
+  color: #000;
+  font-size: 2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+
 
 .h4-dark {
   color: #000;
@@ -67,7 +100,7 @@ p {
 
 body {
   margin-right: -10px;
-  background-color: #333;
+  background-color: #d2d2d2;
   // background: linear-gradient(to bottom, #413f7a , #1680b1);
   min-height: 100%;
   // background: url("/assets/bg.jpg") no-repeat center center fixed;
@@ -133,9 +166,8 @@ body {
 }
 
 .logo {
-  padding-bottom: 5px;
-  max-height: 55px;
-  margin-left: 45px;
+  padding: 5px;
+  margin: 5px;
 }
 
 .shiftR {
@@ -440,10 +472,12 @@ input[type="image"]
   max-width: 525px;
 }
 
+
+
 .flex-container-big {
   background-color: #000;
   display: flex;
-  height: 70px;
+  height: 100%;
   justify-content: center;
 }
 .flex-block-big {
@@ -451,4 +485,17 @@ input[type="image"]
   width: 100%;
   padding: 10px;
   margin: 0 auto;
+}
+
+.left {
+  background-color: #333;
+}
+
+.right {
+  height: 100%;
+  background-color: #f3f3f3;
+}
+
+.content {
+  width: 90%;
 }

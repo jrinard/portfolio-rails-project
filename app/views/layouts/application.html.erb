@@ -3,24 +3,56 @@
   <head>
     <title>Portfolio</title>
     <%= csrf_meta_tags %>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Oswald|Passion+One|Open+Sans" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
   <body>
-    <div class="flex-container-big">
-      <div class="flex-block-big">
-        <div class="col-xs-12">
-          <div class="center">
-
-          <%= link_to image_tag("logo.png", :class => "logo"), root_path %>
-          <%= link_to 'About', about_index_path %> |
+      <div class="row">
+        <div class="col-sm-4 left center">
+          <br>
+          <h1>Joshua<br>Rinard</h1>
+          <%#= link_to image_tag("logo2.png", :class => "logo img-responsive"), root_path %>
+          <br>
+          <%= link_to 'About', about_index_path %>
           <%= link_to 'Projects', projects_path %>
 
+          <h4>Web Developer</h4>
+          <h4>Graphic Design</h4>
+          <br>
+          <h2>TECH SKILLS</h2>
+          <h5>HTML5 / CSS3</h5>
+          <h5>Ruby on Rails</h5>
+          <h5>JavaScript</h5>
+          <h5>Angular 2</h5>
+          <h5>Git</h5>
+          <h5>Bootstrap</h5>
+          <h5>SQL</h5>
+          <h5>Adobe Photoshop</h5>
+          <h5>Adobe Illustrator</h5>
+          <h5>Adobe Adobe Indesign</h5>
+          <h5>Search Engine Optimization</h5>
+          <h5>PPC / Adwords</h5>
+
+          <h2>DESIGN SKILLS</h2>
+          <h5>Front-end Design</h5>
+          <h5>User Interface</h5>
+          <h5>Layout Design</h5>
+          <h5>Content Management</h5>
+
         </div>
-     </div>
-   </div>
-</div>
+        <div class="col-sm-8 right">
+          <div class="center-notice grey">
+              <%= flash[:notice] %>
+          </div>
+          <div class="content">
+             <%= yield %>
+          </div>
+
+        </div>
+      </div>
+      
+
   <!-- LOGIN -->
    <% if @showlogin === true %>
    <div class="menu">
@@ -34,26 +66,17 @@
    </div> <!-- login end -->
    <% end %>
 
-   <div class="center-notice grey">
-       <%= flash[:notice] %>
-   </div>
 
-    <%= yield %>
-    </div>
+
+<!-- Footer -->
 
     <div class="footer">
   <div class="notice"></div>
     <% if current_user %>
-
         <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
-
     <% else %>
-
         <li><%= link_to "Admin", new_user_session_path %></a></li>
-
     <% end %>
   </div><!-- control panel end -->
-
-
   </body>
 </html>
