@@ -6,6 +6,7 @@
     <%= f.text_field :description, :class => 'form-control', :placeholder => "Description"  %><br>
     <%= f.label :link,'Link to Hub' %>
     <%= f.text_field :link, :class => 'form-control', :placeholder => "Link"  %><br>
+    <%= f.file_field :image %>
     <%= f.submit :class => "btn btn-primary" %>
   <% end %>
 </div>
