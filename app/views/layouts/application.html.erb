@@ -10,16 +10,19 @@
   <body>
       <div class="row">
         <div class="col-sm-4 left center">
-          <br>
-          <h1>Joshua<br>Rinard</h1>
+          <br><br>
           <%#= link_to image_tag("logo2.png", :class => "logo img-responsive"), root_path %>
+          <div class="home">
+              <%= link_to 'Joshua Rinard', projects_path %>
+          </div>
           <br>
-          <%= link_to 'Home', projects_path, :class => "home" %>
 
           <h4>Web Developer</h4>
           <h4>Graphic Design</h4>
           <br>
+
           <h2>TECH SKILLS</h2>
+          <%= image_tag("icon1.png", :class => "icon-size")%>
           <h5>HTML5 / CSS3</h5>
           <h5>Ruby on Rails</h5>
           <h5>JavaScript</h5>
@@ -31,15 +34,27 @@
           <h5>Adobe Illustrator</h5>
           <h5>Adobe Adobe Indesign</h5>
           <h5>Search Engine Optimization</h5>
-          <h5>PPC / Adwords</h5>
+          <h5>PPC / Adwords</h5><br>
 
           <h2>DESIGN SKILLS</h2>
+          <%= image_tag("icon2.png", :class => "icon-size")%>
           <h5>Front-end Design</h5>
           <h5>User Interface</h5>
           <h5>Layout Design</h5>
           <h5>Content Management</h5>
           <br>
           <br>
+<div class="contact-info">
+  <%= image_tag("icon6.png", :class => "icon-size")%><br>
+  <div class="h2-black">208-316-8338</div>
+    <div class="h4-black">jrinard@hotmail.com</div><br>
+
+<a href="https://www.linkedin.com/in/jrinard/" target="_blank"><%= image_tag("icon-lin.png", :class => "icon-size")%></a>
+<a href="http://www.joshrinardart.com/" target="_blank"><%= image_tag("icon-inst.png", :class => "icon-size")%></a>
+<a href="https://github.com/jrinard" target="_blank"><%= image_tag("icon-git.png", :class => "icon-size")%></a>
+<br>
+</div>
+
 
         </div>
         <div class="col-sm-8 right">

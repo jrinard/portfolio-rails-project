@@ -7,6 +7,7 @@
       <p>View my Github projects: https://github.com/jrinard</p>
 
 
+        <%= image_tag("icon5.png", :class => "icon-size")%>
         <span class="h2-black">Recent Projects</span>
 
         <% if current_user %>
@@ -16,7 +17,7 @@
             <% if @projects.any? %>
                 <% @projects.each  do |project| %>
                   <div class="panel-heading">
-                    <span class="project-text"> <%= project.title %></span>
+                  <span class="project-text"> <%= project.title %></span>
                     <div class="pull-right">
                       <%= project.link %>
                     </div>
@@ -39,6 +40,32 @@
               <p>There are no projects</p>
             <% end %>
           </div>
+
+          <%= image_tag("icon4.png", :class => "icon-size")%>
+          <span class="h2-black">Education</span>
+          <br>
+          <%= image_tag("icon_bullet.png", :class => "icon-size")%>
+          <span class="h3-black">Epicodus</span><em><span class="va">Web Development - 2016-2017</span></em><br>
+            <%= image_tag("icon_bullet.png", :class => "icon-size")%>
+          <span class="h3-black">College of Southern Idaho</span><em><span class="va">Web Design - 2010-2014</span></em><br>
+            <%= image_tag("icon_bullet.png", :class => "icon-size")%>
+          <span class="h3-black">SF Academy of Art Uni.</span><em><span class="va">Asso. Illustration - 2004-2006</span></em>
+          <br>
+          <br>
+          <%= image_tag("icon3.png", :class => "icon-size")%>
+          <span class="h2-black">Experience</span><br>
+          <%= image_tag("icon_bullet.png", :class => "icon-size")%>
+          <span class="h3-black">LifeSpring Design</span><em><span class="va">Creative Director - 2004-2017</span></em><br>
+          <p class="shift-left">Operate as the project manager and handle responsibilities on every area of the process including: Art Direction, Website layout and code, graphic design, customer sales, print media, logos, web hosting management with periodic updates, search engine optimization, social media marketing, managing deadlines, and client retention. I have experience working on a project basis with many clients and printers.</p>
+          <%= image_tag("icon_bullet.png", :class => "icon-size")%>
+          <span class="h3-black">Pomerelle Portraits</span><em><span class="va">Graphic Designer - 2010-2012</span></em><br>
+          <p class="shift-left">Responsible for all graphic design work including image manipulation: color correction, exposure, cropping, restoration, head swapping, advertising, marketing materials, appointments, and customer sales.</p>
+
+
+
+
+
+<br><br><br>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="well">
