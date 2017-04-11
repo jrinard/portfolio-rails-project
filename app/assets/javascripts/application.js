@@ -15,3 +15,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//Toggle a div
+// $(function() {
+//   $('a#show_details').click(function(event){
+//     event.preventDefault();
+//     $('div#whatever').toggle();
+//   });
+// });
+
+//Toggle details and hide the others
+$(document).ready(function () {
+    $(".detail_button").on('click', function () {
+        var $details = $(this).next(".details");
+        $details.toggle(); //toggle the current one
+        $(".details").not($details).slideUp(); //hide the others
+    });
+});

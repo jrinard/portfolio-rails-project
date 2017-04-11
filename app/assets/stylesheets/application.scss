@@ -83,11 +83,16 @@ h6 {
   letter-spacing: 1px;
 }
 
-.project-subtext {
+.text {
   color: #000;
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 1px;
+}
+
+.home {
+  color: #fff;
+  font-size: 3em;
 }
 
 
@@ -534,5 +539,5 @@ input[type="image"]
 }
 
 .image-size {
-    max-width: 300px;
+    max-height: 300px;
 }

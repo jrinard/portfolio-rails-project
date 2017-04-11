@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
       @showlogin = true
     end
 
-    @projects = Project.all
+    @projects = Project.order(id: :asc)
     repos = Github.new
     @repo_list = repos.get_projects()
     @complete_list = false
@@ -31,6 +31,22 @@ class ProjectsController < ApplicationController
     else
       flash[:notice] = "Please fill everything in"
       render :new
+    end
+  end
+
+  def edit
+   @project = Project.new
+   @project = Project.find(params[:id])
+   @user = current_user
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
+      flash[:notice] = "Project updated!"
+      redirect_to projects_path
+    else
+      render :edit, notice: 'There was an error updating your project. Please try again.'
     end
   end
 
