@@ -10,7 +10,11 @@
   <body>
       <div class="row">
         <div class="col-sm-4 left center">
-          <br><br>
+          <br>
+          <div class="center-notice grey">
+              <%= flash[:notice] %>
+          </div>
+          <br>
 
           <div class="home">
             <%= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), projects_path %>
@@ -21,7 +25,6 @@
           <h4>Web Developer</h4>
           <h4>Graphic Design</h4>
           <br>
-
           <h2>TECH SKILLS</h2>
           <%= image_tag("icon1.png", :class => "icon-size")%>
           <h5>HTML5 / CSS3</h5>
@@ -45,37 +48,31 @@
           <h5>Content Management</h5>
           <br>
           <br>
-<div class="contact-info">
-  <%= image_tag("icon6.png", :class => "icon-size")%><br>
-  <div class="h2-black">208-316-8338</div>
-    <div class="h4-black">jrinard@hotmail.com</div><br>
 
-<a href="https://www.linkedin.com/in/jrinard/" target="_blank"><%= image_tag("icon-lin.png", :class => "icon-size")%></a>
-<a href="http://www.joshrinardart.com/" target="_blank"><%= image_tag("icon-inst.png", :class => "icon-size")%></a>
-<a href="https://github.com/jrinard" target="_blank"><%= image_tag("icon-git.png", :class => "icon-size")%></a>
-<br>
-</div>
-<br>
-    <% if current_user %>
-        <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
-    <% else %>
-        <li><%= link_to "Admin", new_user_session_path %></a></li>
-    <% end %>
+          <div class="contact-info">
+            <%= image_tag("icon6.png", :class => "icon-size")%><br>
+            <div class="h2-black">208-316-8338</div>
+            <div class="h4-black">jrinard@hotmail.com</div><br>
 
-</div> <!-- Left end -->
-
+            <a href="https://www.linkedin.com/in/jrinard/" target="_blank"><%= image_tag("icon-lin.png", :class => "icon-size")%></a>
+            <a href="http://www.joshrinardart.com/" target="_blank"><%= image_tag("icon-inst.png", :class => "icon-size")%></a>
+            <a href="https://github.com/jrinard" target="_blank"><%= image_tag("icon-git.png", :class => "icon-size")%></a>
+            <br>
+          </div>
+          <br>
+          <% if current_user %>
+              <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
+          <% else %>
+              <li><%= link_to "Admin", new_user_session_path %></a></li>
+          <% end %>
+        </div> <!-- Left end -->
 
         <div class="col-sm-8 right">
-          <div class="center-notice grey">
-              <%= flash[:notice] %>
-          </div>
           <div class="content">
              <%= yield %>
           </div>
-
         </div>
       </div>
-
 
   <!-- LOGIN -->
    <% if @showlogin === true %>
@@ -89,6 +86,5 @@
      <% end %>
    </div> <!-- login end -->
    <% end %>
-
   </body>
 </html>
