@@ -11,9 +11,10 @@
       <div class="row">
         <div class="col-sm-4 left center">
           <br><br>
-          <%#= link_to image_tag("logo2.png", :class => "logo img-responsive"), root_path %>
+
           <div class="home">
-              <%= link_to 'Joshua Rinard', projects_path %>
+            <%= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), projects_path %>
+              <%#= link_to 'Joshua Rinard', projects_path %>
           </div>
           <br>
 
@@ -54,9 +55,16 @@
 <a href="https://github.com/jrinard" target="_blank"><%= image_tag("icon-git.png", :class => "icon-size")%></a>
 <br>
 </div>
+<br>
+    <% if current_user %>
+        <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
+    <% else %>
+        <li><%= link_to "Admin", new_user_session_path %></a></li>
+    <% end %>
+
+</div> <!-- Left end -->
 
 
-        </div>
         <div class="col-sm-8 right">
           <div class="center-notice grey">
               <%= flash[:notice] %>
@@ -82,17 +90,5 @@
    </div> <!-- login end -->
    <% end %>
 
-
-
-<!-- Footer -->
-
-    <div class="footer">
-  <div class="notice"></div>
-    <% if current_user %>
-        <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
-    <% else %>
-        <li><%= link_to "Admin", new_user_session_path %></a></li>
-    <% end %>
-  </div><!-- control panel end -->
   </body>
 </html>

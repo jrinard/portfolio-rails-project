@@ -238,7 +238,8 @@ body {
 
 .logo {
   padding: 5px;
-  margin: 5px;
+  margin-left: 0px;
+  margin:auto;
 }
 
 .shiftR {
@@ -249,26 +250,6 @@ body {
     padding-top: 15px;
     float: left;
 }
-
-
-// // LINKS
-// a:active {
-//   color: #000;
-//   font-size: 1.5em;
-// }
-// a:visited {
-//   color: #000;
-//   font-size: 1.5em;
-// }
-// a:hover {
-//   color: #df5488;
-//   font-size: 1.5em;
-//   text-decoration: none;
-// }
-// a:link {
-//  color: #df5488;
-//  font-size: 1em;
-// }
 
 // footer
 .footer {
@@ -417,8 +398,6 @@ input[type="image"]
   font-size: 1.2em;
   font-weight: bold;
 }
-
-
 
 
 .edit-button {
@@ -605,3 +584,7 @@ input[type="image"]
 .icon-size {
   max-width: 50px;
 }
+
+.details{
+       display:none;
+    }
