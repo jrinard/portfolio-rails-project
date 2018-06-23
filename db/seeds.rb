@@ -6,5 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#was seeded on 6-22-18
 
 user = User.create! :email => 'admin@email.com', :password => 'password', :password_confirmation => 'password'
