@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
       @showlogin = true
     end
 
-    @projects = Project.order(id: :asc)
+    @projects = Project.order(id: :desc)
     repos = Github.new
     @repo_list = repos.get_projects()
     @complete_list = false
